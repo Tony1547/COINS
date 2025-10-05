@@ -1,8 +1,3 @@
+import kaplay from "https://unpkg.com/kaplay@3001.0.19/dist/kaplay.mjs"
 
-function add(myArray) {
-    myArray = [];
-}
-
-const myArray = [1,2,3];
-modify(myArray);
-console.log(myArray)
+kaplay();
