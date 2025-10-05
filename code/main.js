@@ -6,7 +6,7 @@ const k = kaplay({
 })
 
 k.loadBean();
-k.setGravity(1800);
+k.setGravity(1600);
 
 //Player Character Made
 const player = k.add([
