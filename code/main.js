@@ -29,8 +29,16 @@ k.add([
     k.pos(0, 500), 
     k.area(),
     k.outline(3), 
-    k.body({isStatic: true})
+    k.body({ isStatic: true})
 ]);
 
-k.loop(1, )
+k.loop(1, () => {
+    k.add([
+        k.rect(50, 50),
+        k.pos(1000, 500),
+        k.area(),
+        k.body(),
+        k.outline,
+    ])
+})
 
