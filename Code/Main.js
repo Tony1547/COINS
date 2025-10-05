@@ -1,3 +1,7 @@
-for (let i = 0; i < 100; i++) {
-    console.log(i)
+const name = ["john","max","chris"];
+
+let i = 0 
+while (i <  names.length) {
+    console.log(names[i]);
+    i++;
 }
