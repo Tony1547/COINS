@@ -5,6 +5,18 @@ const k = kaplay({
     height: 720,
 })
 
+
+k.scene("MENU", () => {
+    k.add([k.rect(
+        k.width(1280), 
+        k.height(720),
+        k.color(0,0,0) )]);
+});
+
+
+
+
+
 k.loadBean();
 k.setGravity(1600);
 
