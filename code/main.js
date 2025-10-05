@@ -66,9 +66,4 @@ k.loop(1, () => {
 
 
 
-k.scene("Menu", () => {
-    k.add([
-        player.onMousePress("left", () => {
-            
-        })
-    ])});
+
