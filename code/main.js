@@ -3,17 +3,10 @@ import kaplay from "kaplay";
 const k = kaplay({
     width: 1280,
     height: 720,
-
-});
+})
 
 k.loadBean();
 k.setGravity(1800);
-
-//Button Press = jump
-player.onKeyPress("space", () => {
-    if (player.isGrounded) {player.jump();
-    }
-});
 
 //Player Character Made
 const player = k.add([
@@ -21,7 +14,14 @@ const player = k.add([
     k.pos(k.center()),
     k.area(),
     k.body(),
-]);
+]); 
+
+//Button Press = jump
+player.onKeyPress("space", () => {
+    if (player.isGrounded) {player.jump();
+    }
+});
+
 
 //Box
 k.add([
@@ -34,7 +34,7 @@ k.add([
 
 //speed
 k.loop(1, () => {
-    const speeds = [300, 500, 800];
+    const speeds = [300, 500, 800, 1000, 1500];
     const currentSpeed = speeds[Math.floor(Math.random() * speeds.length)]
 
     k.add([
