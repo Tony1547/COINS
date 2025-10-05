@@ -27,9 +27,9 @@ player.onExitScreen(() => {
     k.go("Game Over!");
 });
 
-k.scene("gameOver", () => {
+k.scene("Game Over!", () => {
         k.add([k.text("Game Over!"), k.pos(k.center())]);
-    })
+    });
 
 //Box
 k.add([
@@ -63,3 +63,12 @@ k.loop(1, () => {
     ])
 });
 
+
+
+
+k.scene("Menu", () => {
+    k.add([
+        player.onMousePress("left", () => {
+            
+        })
+    ])});
