@@ -14,14 +14,22 @@ const player = k.add([
     k.pos(k.center()),
     k.area(),
     k.body(),
+    k.offscreen(),
 ]); 
 
 //Button Press = jump
 player.onKeyPress("space", () => {
-    if (player.isGrounded) {player.jump();
-    }
+    if (player.isGrounded()) player.jump();
 });
 
+//end when you get off screen
+player.onExitScreen(() => {
+    k.go("Game Over!");
+});
+
+k.scene("gameOver", () => {
+        k.add([k.text("Game Over!"), k.pos(k.center())]);
+    })
 
 //Box
 k.add([
@@ -32,10 +40,17 @@ k.add([
     k.body({ isStatic: true})
 ]);
 
-//speed
+//speed and loop of boxes
+
+let counter = 0;
+const counterUI = k.add([k.text("0")]); 
+
 k.loop(1, () => {
+    counter++;
+    counterUI.text = counter;
+
     const speeds = [300, 500, 800, 1000, 1500];
-    const currentSpeed = speeds[Math.floor(Math.random() * speeds.length)]
+    const currentSpeed = speeds[Math.floor(Math.random() * speeds.length)];
 
     k.add([
         k.rect(50, 50),
@@ -43,8 +58,8 @@ k.loop(1, () => {
         k.area(),
         k.body(),
         k.outline(3),
-        k.move(k.vec2(-1,0), Math.random()),
+        k.move(k.vec2(-1,0), currentSpeed),
 
     ])
-})
+});
 
