@@ -7,7 +7,7 @@ const k = kaplay({
 });
 
 k.loadBean();
-k.setGravity(1000);
+k.setGravity(1800);
 
 //Button Press = jump
 player.onKeyPress("space", () => {
@@ -32,13 +32,19 @@ k.add([
     k.body({ isStatic: true})
 ]);
 
+//speed
 k.loop(1, () => {
+    const speeds = [300, 500, 800];
+    const currentSpeed = speeds[Math.floor(Math.random() * speeds.length)]
+
     k.add([
         k.rect(50, 50),
         k.pos(1000, 500),
         k.area(),
         k.body(),
-        k.outline,
+        k.outline(3),
+        k.move(k.vec2(-1,0), Math.random()),
+
     ])
 })
 
